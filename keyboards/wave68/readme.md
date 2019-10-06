@@ -1,4 +1,4 @@
-# wave68
+# The WAVE68 keyboard 
 
 ![wave68](imgur.com image replace me!)
 

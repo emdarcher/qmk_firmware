@@ -16,6 +16,28 @@
 
 #include "wave68.h"
 
+#define CAPS_LED_PIN    D0
+
+void keyboard_pre_init_kb(void){
+    //init the CAPS LOCK LED pin as an output
+    setPinOutput(CAPS_LED_PIN);
+    //call any user initialization code
+    keyboard_pre_init_user();
+}
+
+void led_set_kb(uint8_t usb_led){
+    //control the CAPS LOCK LED
+    if(IS_LED_ON(usb_led, USB_LED_CAPS_LOCK)){
+        //set led pin to high
+        writePinHigh(CAPS_LED_PIN);
+    } else {
+        //set to low
+        writePinLow(CAPS_LED_PIN);
+    }
+    //call any user LED functions
+    led_set_user(usb_led);
+}
+
 // Optional override functions below.
 // You can leave any or all of these undefined.
 // These are only required if you want to perform custom actions.
@@ -43,10 +65,5 @@ bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
   return process_record_user(keycode, record);
 }
 
-void led_set_kb(uint8_t usb_led) {
-  // put your keyboard LED indicator (ex: Caps Lock LED) toggling code here
-
-  led_set_user(usb_led);
-}
-
 */
+
