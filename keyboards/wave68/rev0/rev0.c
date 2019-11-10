@@ -14,7 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "wave68.h"
+#include "rev0.h"
 
 #define CAPS_LED_PIN    D0
 
