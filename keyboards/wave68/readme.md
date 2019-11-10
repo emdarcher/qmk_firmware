@@ -4,8 +4,8 @@
 
 A short description of the keyboard/project
 
-Keyboard Maintainer: [Ethan Durrant](https://github.com/emdarcher)  
-Hardware Supported: WAVE68 
+Keyboard Maintainer: [emdarcher](https://github.com/emdarcher)  
+Hardware Supported: WAVE68   
 Hardware Availability: links to where you can find this hardware
 
 Make example for this keyboard (after setting up your build environment):
