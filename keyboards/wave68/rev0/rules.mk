@@ -29,9 +29,6 @@ BOOTLOADER = USBasp
 # set the processor frequency to 12MHz
 F_CPU = 12000000
 
-# disable the debugging code
-OPT_DEFS = -DDEBUG_LEVEL=0
-
 # custom command for programming via USBasp for the 
 # ATmega32A running USBasploader
 # can be flashed with the following QMK make parameters:

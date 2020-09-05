@@ -25,17 +25,13 @@ void keyboard_pre_init_kb(void){
     keyboard_pre_init_user();
 }
 
-void led_set_kb(uint8_t usb_led){
-    //control the CAPS LOCK LED
-    if(IS_LED_ON(usb_led, USB_LED_CAPS_LOCK)){
-        //set led pin to high
-        writePinHigh(CAPS_LED_PIN);
-    } else {
-        //set to low
-        writePinLow(CAPS_LED_PIN);
+bool led_update_kb(led_t led_state){
+    bool res = led_update_user(led_state);
+    if(res){
+        //write CAPS LOCK state on the LED
+        writePin(CAPS_LED_PIN, led_state.caps_lock);
     }
-    //call any user LED functions
-    led_set_user(usb_led);
+    return res;
 }
 
 // Optional override functions below.
